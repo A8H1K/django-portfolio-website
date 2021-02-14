@@ -22,7 +22,9 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
+    path('interio/', include('base.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+
 
     #1
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name="password_reset.html"), name="password_reset"),
@@ -36,6 +38,7 @@ urlpatterns = [
 
     #4
     path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="reset_complete.html"), name="password_reset_complete"),
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

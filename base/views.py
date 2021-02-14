@@ -206,3 +206,6 @@ def updateProfile(request):
 
 	context = {'form':form}
 	return render(request, 'base/profile_form.html', context)
+
+def interio(request):
+	return render(request, 'templates/interio.html')
