@@ -1,1 +1,1 @@
-web: gunicorn dennisivy.wsgi
+web: waitress-serve --port=$PORT dennisivy.wsgi:application
