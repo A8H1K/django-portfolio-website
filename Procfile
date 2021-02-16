@@ -1,1 +1,1 @@
-web: waitress-serve dennisivy.wsgi
+web: gunicorn dennisivy.wsgi
