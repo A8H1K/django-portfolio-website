@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT dennisivy.wsgi:application
+web: python manage.py runserver
