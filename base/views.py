@@ -13,7 +13,6 @@ from .decorators import *
 
 from .forms import PostForm, CustomUserCreationForm, ProfileForm, UserForm
 from .filters import PostFilter
-
 from .models import *
 
 # Create your views here.
@@ -121,7 +120,7 @@ def sendEmail(request):
 			request.POST['subject'],
 			template,
 			settings.EMAIL_HOST_USER,
-			['dennisivy11@gmail.com']
+			['abhikchoudhary2007@gmail.com']
 			)
 
 		email.fail_silently=False
@@ -209,3 +208,8 @@ def updateProfile(request):
 
 def interio(request):
 	return render(request, 'templates/interio.html')
+
+def handler404(request, *args, **argv):
+    response = render(request, '404.html')
+    response.status_code = 404
+    return response
