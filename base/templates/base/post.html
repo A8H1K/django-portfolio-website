@@ -85,10 +85,7 @@
 	<div class="comments-wrapper">
 		<h5>Comments: {{post.postcomment_set.all.count}}</h5>
 		<hr>
-		<!--
-			- Not logged in, output form and say "Register to comment and give room for a message"
-			- When given username 
-		-->
+		
 		{% if request.user.is_authenticated %}
 		<form action="" method="POST">
 			{% csrf_token %}

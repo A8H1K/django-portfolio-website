@@ -14,8 +14,14 @@ from .decorators import *
 from .forms import PostForm, CustomUserCreationForm, ProfileForm, UserForm
 from .filters import PostFilter
 from .models import *
+from django.shortcuts import render
+from django.template import RequestContext
 
-# Create your views here.
+def custom_404(request, exception):
+    return render(request, '404.html')
+
+def ren404(request):
+	return redirect('base/templates/404.html')
 
 def home(request):
 	posts = Post.objects.filter(active=True, featured=True)[0:3]
